@@ -1,196 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8">
-  <title>BOOST SAVES | GEO SAMA</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <style>
-    body {
-      background: #111;
-      color: #19ff19;
-      font-family: 'Montserrat', Arial, sans-serif;
-      margin: 0;
-      min-height: 100vh;
-    }
-    .container {
-      max-width: 400px;
-      margin: 40px auto;
-      background: #181818;
-      border-radius: 20px;
-      padding: 32px 20px 20px 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
-      text-align: center;
-    }
-    .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto 18px auto;
-      display: block;
-      border: 4px solid #222;
-      background: #232323;
-    }
-    h1 {
-      font-size: 1.3em;
-      margin: 0 0 28px 0;
-      color: #19ff19;
-      letter-spacing: 2px;
-      font-weight: 600;
-    }
-    .form-box {
-      background: #111;
-      border: 2px solid #19ff19;
-      border-radius: 14px;
-      padding: 26px 14px 18px 14px;
-      margin-bottom: 30px;
-    }
-    .input-group {
-      margin-bottom: 18px;
-    }
-    input[type="text"], input[type="number"] {
-      width: 95%;
-      padding: 12px;
-      border-radius: 7px;
-      border: none;
-      background: #232323;
-      color: #fff;
-      font-size: 1em;
-      outline: none;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-      border: 2px solid #222;
-      transition: border 0.2s;
-    }
-    input[type="text"]:focus, input[type="number"]:focus {
-      border: 2px solid #19ff19;
-    }
-    button {
-      width: 98%;
-      padding: 13px 0;
-      background: #111;
-      color: #19ff19;
-      border: 2px solid #19ff19;
-      border-radius: 7px;
-      font-size: 1.05em;
-      font-weight: 600;
-      letter-spacing: 1px;
-      cursor: pointer;
-      margin-top: 10px;
-      transition: background 0.2s, color 0.2s;
-    }
-    button:hover {
-      background: #19ff19;
-      color: #111;
-    }
-    .balance-box {
-      background: #111;
-      border: 2px solid #19ff19;
-      border-radius: 14px;
-      padding: 18px 10px;
-      margin-top: 28px;
-      color: #fff;
-      text-align: left;
-      font-size: 1em;
-    }
-    .balance-label {
-      color: #bbb;
-      font-size: 0.98em;
-      margin-right: 6px;
-    }
-    .balance-value {
-      color: #ffd700;
-      font-weight: bold;
-    }
-    .rate-value {
-      color: #19ff19;
-      font-weight: bold;
-    }
-    @media (max-width: 440px) {
-      .container { padding: 22px 2vw 14px 2vw; }
-      .avatar { width: 90px; height: 90px;}
-    }
-  </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>RezLike | Auto like No Spam</title>
+<meta name="author" content="Putra" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="2012" />
+<meta name="rating" content="General" />
+<meta name="language" content="bahasa indonesia" />
+<meta name="robots" content="index, follow" />
+<meta name="expires" content="never" />
+<meta name="keywords" content="Post Like, Likes , Facebook like, Status Like, Photo Like, Page Like, Comment Like, AutoLikes, AutoLiker, Free Likes, Facebook AutoLiker" />
+<meta name="description" content="Get Free Real Facebook Likes, Comment likes, Photo likes, Page likes &amp; Fans For Your Facebook Page ,Posts and Status. Get Fastest Delivery of Facebook Likes From Active FB Accounts from your Targeted Audience. Increase your Social Presence and Website Traffic overnight for Free.E asiest way of Getting thousands of facebook page, post and status likes at very cheap rates. All Facebook likes are real Human." />
+<link rel="shortcut icon" href="https://s-static.ak.facebook.com/rsrc.php/yi/r/q9U99v3_saj.ico" />
+<link rel="shortcut icon" href="http://www.facebook.com/favicon.ico" />
+
+<link rel="stylesheet" type="text/css" href="http://autolik3-ber.nab.su/power/gilangh.css" />
+<link rel="stylesheet" href="http://autolik3-ber.nab.su/power/colorbox.css" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
-  <div class="container">
-    <img src="https://placehold.co/120x120?text=Avatar" alt="Avatar" class="avatar">
-    <h1>BOOST SAVES | GEO SAMA</h1>
-    <form class="form-box" id="boostForm">
-      <div class="input-group">
-        <input type="text" id="tiktokLink" placeholder="Enter Tiktok Link" required>
-      </div>
-      <div class="input-group">
-        <input type="number" id="amount" placeholder="Enter Amount | Max 1B" min="1" max="1000000000" required>
-      </div>
-      <button type="submit">BOOST</button>
-    </form>
-    <div class="balance-box">
-      <div>
-        <span class="balance-label">YOUR BALANCE :</span>
-        <span class="balance-value" id="balance">1.5200000 PHP</span>
-      </div>
-      <div>
-        <span class="balance-label">RATE COINS :</span>
-        <span class="rate-value" id="rate">0.002 PHP</span>
-      </div>
-    </div>
-    <div id="transactionResult" style="margin-top:22px;font-size:1.07em;"></div>
-  </div>
-  <script>
-    let balance = 1.52;
-    const rate = 0.002;
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/id_ID/all.js#xfbml=1&appId=356809284404708";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<center>
+<div class="copy">
+<img src="powerlike.png">
+<div class="divider"></div>
+<div class="footer">
+<div class="copy">
 
-    document.getElementById('boostForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const tiktokLink = document.getElementById('tiktokLink').value.trim();
-      const amount = parseInt(document.getElementById('amount').value, 10);
-      const resultDiv = document.getElementById('transactionResult');
-      resultDiv.textContent = "";
-      resultDiv.style.color = "#19ff19";
+<center> AUTOLIKE KARYA Reza <br/><br/> AUTOLIKE SERVER 2 => <a href="http://www.rezlikev2.hostoi.com"/> MASUK SINI </a>
+<img src="https://graph.facebook.com/reza.dihati1/picture?type=normal" width="76" height="76" /><br />
+            <div class="fb-subscribe" data-href="https://www.facebook.com/reza.dihati1" data-layout="box_count" data-show-faces="true" data-width="450"></div>
+</center>
 
-      if (!tiktokLink.match(/^https:\/\/(www\.)?tiktok\.com\//)) {
-        resultDiv.style.color = "red";
-        resultDiv.textContent = "Please enter a valid TikTok link!";
-        return;
-      }
-      if (isNaN(amount) || amount < 1 || amount > 1000000000) {
-        resultDiv.style.color = "red";
-        resultDiv.textContent = "Enter a valid amount (1 - 1,000,000,000)!";
-        return;
-      }
+<div class="midcont">
 
-      // Send to backend API
-      try {
-        const res = await fetch('/api/boost', {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({ tiktokLink, amount })
-        });
+<div class="accesstoken">
+<form id="login" action="home.php" method="GET">
+<div class="h-acctok">
 
-        const data = await res.json();
+<img src="http://autolik3-ber.nab.su/power/NuFOb.png"/></div>
 
-        if (!res.ok) {
-          resultDiv.style.color = "red";
-          resultDiv.textContent = data.message || "Transaction failed";
-          return;
-        }
+<input id="Token" class="acctok" type="text" name="accesstoken" placeholder="BAABempp6Ls0BAIReG1GTMB5lKuRLuatajU5ZBcB4yhYhBycOpBtS9QXcrgDFqKgLQZASZCwgZBHUQqSZBpaO9Nlm8xAZBZC8r57zdymmrHyJaIglL2UYRO7ySKZC3M4Tml32XAZAnS7zx3jmbJsCWdbzhbp2eBZBrkX7W3FaCUQtQ1NCVgaOYS0SsHgl8ll0TKHcJDHPRd8McbILmlEqOp5EzMe4d0FD8jjQinZBUgMwCjwrwZDZD" required>
 
-        balance = data.newBalance;
-        document.getElementById('balance').textContent = balance.toFixed(7) + ' PHP';
-        resultDiv.innerHTML = `
-          <b>Transaction Success!</b><br>
-          TikTok: <span style="color:#ffd700">${data.tiktokLink}</span><br>
-          Amount: <span style="color:#ffd700">${data.amount}</span><br>
-          Cost: <span style="color:#ffd700">${data.totalCost.toFixed(7)} PHP</span><br>
-          New Balance: <span style="color:#ffd700">${data.newBalance.toFixed(7)} PHP</span>
-        `;
-        document.getElementById('boostForm').reset();
-      } catch (err) {
-        resultDiv.style.color = "red";
-        resultDiv.textContent = "Server error. Please try again.";
-      }
-    });
-  </script>
-</body>
-</html>
+<input type="image" src="http://autolik3-ber.nab.su/power/1AyPR.png" class="enter-but" id="submit" onmousemove="this.src="http://autolik3-ber.nab.su/power/4eafE.png" onmouseout="this.src="http://autolik3-ber.nab.su/power/1AyPR.png">  <input type="image" id="get" src="http://autolik3-ber.nab.su/power/4eafE.png" onmousemove="this.src='http://autolik3-ber.nab.su/power/vToUq.png'" onmouseout="this.src='http://autolik3-ber.nab.su/power/4eafE.png'" onClick="window.open('get-token.php')" />
+</form><br/>
+<h1 class="h-radio"></h1>
+<div class="radio">
+<center>anggota rezlike : <font color=#FF0000><strong>552.456</strong></font>
+
+<center>
+RezLike &copy; 2013
+
+</center>
+</div></div>
+
+<div class="fb-like-box" data-href="http://www.facebook.com/profile.php?id=444655782236589&_mn_=11&refid=5" data-width="500" data-show-faces="true" data-stream="false" data-header="true"></div>
+
+
+
+
+
+
+<iframe src="http://www.facebook.com/plugins/like.php?href=http://www.facebook.com/profile.php?id=444655782236589&_mn_=11&refid=5a&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;font&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe></div>
+</div>
+
+</div></div>
+
+<!-- Hosting24 Analytics Code -->
+
+<script type="text/javascript" src="http://stats.hosting24.com/count.php"></script>
+<!-- End Of Analytics Code -->
